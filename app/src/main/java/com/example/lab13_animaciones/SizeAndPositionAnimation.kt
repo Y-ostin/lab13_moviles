@@ -23,13 +23,13 @@ fun SizeAndPositionAnimationExample() {
     // Animación del tamaño
     val size by animateDpAsState(
         targetValue = if (isLarge) 200.dp else 100.dp, // Cambia entre 100 y 200 dp
-        animationSpec = tween(durationMillis = 1000) // Duración de la animación
+        animationSpec = tween(durationMillis = 500) // Duración de la animación
     )
 
     // Calcula el desplazamiento
     val offset by animateDpAsState(
         targetValue = if (isMoved) 200.dp else 0.dp, // Desplazamiento en el eje X
-        animationSpec = tween(durationMillis = 1000) // Duración de la animación
+        animationSpec = tween(durationMillis = 500) // Duración de la animación
     )
 
     Box(
