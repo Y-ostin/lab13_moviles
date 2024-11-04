@@ -5,6 +5,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -34,9 +35,18 @@ fun ColorChangeExample() {
             .background(backgroundColor),
         contentAlignment = Alignment.Center
     ) {
-        // Botón que cambia el color de fondo
-        Button(onClick = { isBlue = !isBlue }) {
-            Text("Cambiar Color")
+        // Botón llamativo que cambia el color de fondo
+        Button(
+            onClick = { isBlue = !isBlue },
+            modifier = Modifier
+                .size(200.dp) // Tamaño del botón
+                .padding(16.dp), // Espaciado alrededor del botón
+            colors = androidx.compose.material3.ButtonDefaults.buttonColors(containerColor = Color.White) // Color de fondo del botón
+        ) {
+            Text(
+                text = "Cambiar Color",
+                color = Color.Black // Color del texto
+            )
         }
 
         // Cuadro con el color de fondo animado
@@ -44,6 +54,13 @@ fun ColorChangeExample() {
             modifier = Modifier
                 .size(200.dp)
                 .background(backgroundColor)
-        )
+                .padding(16.dp), // Espacio interno para el cuadro
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = if (isBlue) "Azul" else "Verde", // Texto que indica el color actual
+                color = Color.White // Color del texto en el cuadro
+            )
+        }
     }
 }

@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Lab13_animacionesTheme {
-                AnimatedVisibilityExample()
+                ColorChangeExample()
             }
         }
     }
